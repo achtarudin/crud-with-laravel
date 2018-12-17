@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\Book;
+use App\Item;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class BookController extends Controller
+class PersonController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        return Item::all();
     }
 
     /**
@@ -41,21 +42,23 @@ class BookController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Book  $book
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Book $book)
+    public function show($id)
     {
         //
+
+        dd($id);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Book  $book
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Book $book)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +67,10 @@ class BookController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Book  $book
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Book $book)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +78,10 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Book  $book
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Book $book)
+    public function destroy($id)
     {
         //
     }

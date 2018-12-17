@@ -4,11 +4,24 @@
 
 // Variables
 @import 'variables';
+@import 'basic.min';
+@import 'dropzone.min';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+.background-default{
+  background-image: linear-gradient(45deg, transparent 20%, black 25%, transparent 25%), 
+                    linear-gradient(-45deg, transparent 20%, black 25%, transparent 25%), 
+                    linear-gradient(-45deg, transparent 75%, black 80%, transparent 0),
+                    radial-gradient(gray 2px, transparent 0);
+  background-size: 30px 30px, 30px 30px;
+  height: 92vh;
+}
+
+.avatar{
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }

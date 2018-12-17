@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBooksTable extends Migration
+class CreateExperiencesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateBooksTable extends Migration
      */
     public function up()
     {
-        Schema::create('books', function (Blueprint $table) {
+        Schema::create('experiences', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('isbn');
-            $table->string('author');
+            $table->integer('item_id')->unsigned();
+            $table->foreign('item_id')->references('id')->on('items');
+            $table->string("experience");
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateBooksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('books');
+        Schema::dropIfExists('experiences');
     }
 }

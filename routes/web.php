@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+ Route::resource('item', 'ItemController');
+ Route::get('/', 'HomeController@index');
+ Route::get('/contact', 'ContactController@create')->name('contact.create');
+ Route::post('/contact', 'ContactController@send')->name('contact.send');
+
